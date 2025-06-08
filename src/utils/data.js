@@ -1,8 +1,8 @@
 // src/data/data.js
 export const goals = [
-  { title: "TITP", image: "/TITP.png" },
+  { title: "Engineering", image: "/TECH.png" },
   { title: "SSW", image: "/SSW.png" },
-  { title: "Tech", image: "/TECH.png" },
+  { title: "TITP", image: "/TITP.png" },
   { title: "JLPT/NAT", image: "/JLPT.png" },
 ];
 

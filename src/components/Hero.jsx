@@ -1,18 +1,24 @@
 import React from "react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { goals, services } from "../utils/data";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
-
+  const navigate = useNavigate();
   return (
     <div className="lg:py-5 min-h-screen">
       <MaxWidthWrapper className="flex flex-col items-center h-full">
         <div className="flex lg:flex-row flex-col items-center justify-between max-lg:gap-y-5 w-full my-5">
           <div className="flex flex-col gap-y-5 lg:w-[47%] w-[90%]">
-            <h1 className="lg:text-4xl text-xl text-[#3C4852] uppercase font-bold text-center lg:text-justify">
-              Bridging Inidan talent with japenese opportunities
+            <h1 className="lg:text-3xl text-xl text-[#3C4852] uppercase font-bold text-center lg:text-justify">
+              Bridging THE Indian talent with japenese opportunities
             </h1>
             <div className="flex flex-col gap-y-2 my-4">
+              <input
+                className="w-full h-12 flex items-center justify-center rounded-lg bg-transparent border border-[#3C4852] px-5"
+                placeholder="Enter your Name"
+                type="text"
+              />
               <input
                 className="w-full h-12 flex items-center justify-center rounded-lg bg-transparent border border-[#3C4852] px-5"
                 placeholder="Enter your mobile number"
@@ -44,6 +50,13 @@ const Hero = () => {
               <div
                 key={index}
                 className="flex flex-col items-center justify-center p-4 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition lg:w-[266px] lg:h-[280px] w-full h-[250px]"
+                onClick={() => {
+                  const route = `/${goal.title
+                    .toLowerCase()
+                    .replace("/", "")
+                    .replace(/\s+/g, "")}`;
+                  navigate(route);
+                }}
               >
                 {goal.image && (
                   <img
